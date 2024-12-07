@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Represents system that is aware of threats that are present in it.
  */
-public interface ThreatAwareSystem<T extends Threat> {
+public interface ThreatAwareSystem {
 
   /**
    * Returns the system id.
@@ -43,13 +43,13 @@ public interface ThreatAwareSystem<T extends Threat> {
    * Returns list of threats for this system.
    * @return list of threats for this system.
    */
-  List<T> threats();
+  List<? extends Threat> threats();
 
   /**
    * Returns the instance of {@link Filterer} helper interface that allows to covariantly
    * specify lower bound for predicate that we want to filter by.
    * @return an instance of {@link Filterer} helper interface.
    */
-  Filterer<ThreatAwareSystem<T>, T> filtered();
+  Filterer<? extends ThreatAwareSystem, ? extends Threat> filtered();
 
 }

@@ -43,7 +43,5 @@ public class KingsHand extends EventEmitter implements EventObserver {
 
   @Override
   public void timePasses(Weekday day) {
-    // This method is intentionally left empty because KingsHand does not handle time-based events directly.
-    // It serves as a placeholder to fulfill the EventObserver interface contract.
   }
 }
